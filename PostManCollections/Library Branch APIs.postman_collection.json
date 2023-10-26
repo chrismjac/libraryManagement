@@ -1,0 +1,434 @@
+{
+	"info": {
+		"_postman_id": "7fba1891-d12f-4f40-ae54-5574c1f45275",
+		"name": "Library Branch APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3140938",
+		"_collection_link": "https://www.postman.com/chrismj/workspace/pre-assessment-project/collection/3140938-7fba1891-d12f-4f40-ae54-5574c1f45275?action=share&source=collection_link&creator=3140938"
+	},
+	"item": [
+		{
+			"name": "Add Library Branch",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \r\n  \"branchName\": \"Mississauga\",\r\n  \"address\": \"456 Test St,Mississauga Ontario\",\r\n  \"contactNumber\": 444555777\r\n \r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/library-branches",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"library-branches"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Library Branch",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"branchName\": \"Mississauga\",\r\n  \"address\": \"456 Test St,Mississauga Ontario\",\r\n  \"contactNumber\": 444555777\r\n \r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/library-branches",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"library-branches"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 26 Oct 2023 02:12:09 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Branch Details added successfully"
+				}
+			]
+		},
+		{
+			"name": "Get all library branches",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/library-branches",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"library-branches"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get all library branches",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/library-branches",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"library-branches"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 26 Oct 2023 02:14:14 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"branchName\": \"Brampton\",\n        \"address\": \"123 Test St,Brampton Ontario\",\n        \"contactNumber\": 444555666,\n        \"books\": []\n    },\n    {\n        \"id\": 2,\n        \"branchName\": \"Mississauga\",\n        \"address\": \"456 Test St,Mississauga Ontario\",\n        \"contactNumber\": 444555777,\n        \"books\": []\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Update Library Branch",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"branchName\": \"Brampton\",\r\n    \"address\": \"123 Test St Updated,Brampton Ontario\",\r\n    \"contactNumber\": 444555666,\r\n    \"books\": []\r\n  }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/library-branches/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"library-branches",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Library Branch",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"branchName\": \"Brampton\",\r\n    \"address\": \"123 Test St Updated,Brampton Ontario\",\r\n    \"contactNumber\": 444555666,\r\n    \"books\": []\r\n  }"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/library-branches/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"library-branches",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "35"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 26 Oct 2023 02:17:36 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Branch Details updated successfully"
+				}
+			]
+		},
+		{
+			"name": "Get branch by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/library-branches/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"library-branches",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get branch by id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/library-branches/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"library-branches",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 26 Oct 2023 02:18:58 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"branchName\": \"Brampton\",\n    \"address\": \"123 Test St Updated,Brampton Ontario\",\n    \"contactNumber\": 444555666,\n    \"books\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete branch by id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/library-branches/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"library-branches",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete branch by id",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/library-branches/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"library-branches",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "35"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 26 Oct 2023 02:19:57 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Branch Details deleted successfully"
+				}
+			]
+		}
+	]
+}

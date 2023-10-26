@@ -1,0 +1,596 @@
+{
+	"info": {
+		"_postman_id": "581dfa63-044b-40fe-a5e6-1aa740de1500",
+		"name": "Book APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3140938",
+		"_collection_link": "https://www.postman.com/chrismj/workspace/pre-assessment-project/collection/3140938-581dfa63-044b-40fe-a5e6-1aa740de1500?action=share&source=collection_link&creator=3140938"
+	},
+	"item": [
+		{
+			"name": "Add new book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 0,\r\n  \"title\": \"My First Book\",\r\n  \"description\": \"first test book\",\r\n  \"genre\": {\r\n    \"id\": 2,\r\n    \"genreName\": \"Fiction Newly Updated\"\r\n  },\r\n  \"authors\": [\r\n    {\r\n        \"id\": 2,\r\n        \"name\": \"Alan John\",\r\n        \"books\": []\r\n    },\r\n    {\r\n        \"id\": 3,\r\n        \"name\": \"Chris Mary Jacob\",\r\n        \"books\": []\r\n    }\r\n  ],\r\n  \"libraryBranch\": {\r\n   \r\n        \"id\": 1,\r\n        \"branchName\": \"Brampton\",\r\n        \"address\": \"123 Test St,Brampton Ontario\",\r\n        \"contactNumber\": 444555666,\r\n        \"books\": []\r\n    \r\n  },\r\n  \"availabilityStatus\": \"Available\",\r\n \r\n  \"publishedYear\": 200\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add new book",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 0,\r\n  \"title\": \"My First Book\",\r\n  \"description\": \"first test book\",\r\n  \"genre\": {\r\n    \"id\": 2,\r\n    \"genreName\": \"Fiction Newly Updated\"\r\n  },\r\n  \"authors\": [\r\n    {\r\n        \"id\": 2,\r\n        \"name\": \"Alan John\",\r\n        \"books\": []\r\n    },\r\n    {\r\n        \"id\": 3,\r\n        \"name\": \"Chris Mary Jacob\",\r\n        \"books\": []\r\n    }\r\n  ],\r\n  \"libraryBranch\": {\r\n   \r\n        \"id\": 1,\r\n        \"branchName\": \"Brampton\",\r\n        \"address\": \"123 Test St,Brampton Ontario\",\r\n        \"contactNumber\": 444555666,\r\n        \"books\": []\r\n    \r\n  },\r\n  \"availabilityStatus\": \"Available\",\r\n \r\n  \"publishedYear\": 200\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 26 Oct 2023 02:56:24 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Book Details added successfully"
+				}
+			]
+		},
+		{
+			"name": "Update book",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"id\": 2,\r\n        \"title\": \"My Second Book Updated\",\r\n        \"description\": \"second test book\",\r\n        \"genre\": {\r\n            \"id\": 2,\r\n            \"genreName\": \"Fiction Newly Updated\",\r\n            \"books\": []\r\n        },\r\n        \"authors\": [],\r\n        \"libraryBranch\": {\r\n            \"id\": 1,\r\n            \"branchName\": \"Brampton\",\r\n            \"address\": \"123 Test St Updated,Brampton Ontario\",\r\n            \"contactNumber\": 444555666,\r\n            \"books\": []\r\n        },\r\n        \"availabilityStatus\": \"Available\",\r\n        \"borrower\": null,\r\n        \"publishedYear\": 200\r\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/books/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update book",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"id\": 2,\r\n        \"title\": \"My Second Book Updated\",\r\n        \"description\": \"second test book\",\r\n        \"genre\": {\r\n            \"id\": 2,\r\n            \"genreName\": \"Fiction Newly Updated\",\r\n            \"books\": []\r\n        },\r\n        \"authors\": [],\r\n        \"libraryBranch\": {\r\n            \"id\": 1,\r\n            \"branchName\": \"Brampton\",\r\n            \"address\": \"123 Test St Updated,Brampton Ontario\",\r\n            \"contactNumber\": 444555666,\r\n            \"books\": []\r\n        },\r\n        \"availabilityStatus\": \"Available\",\r\n        \"borrower\": null,\r\n        \"publishedYear\": 200\r\n    }"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/books/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 26 Oct 2023 02:58:57 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Book Details updated successfully"
+				}
+			]
+		},
+		{
+			"name": "Get all books",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get all books",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 26 Oct 2023 02:59:36 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"title\": \"My First Book\",\n        \"description\": \"first test book\",\n        \"genre\": {\n            \"id\": 2,\n            \"genreName\": \"Fiction Newly Updated\",\n            \"books\": []\n        },\n        \"authors\": [],\n        \"libraryBranch\": {\n            \"id\": 1,\n            \"branchName\": \"Brampton\",\n            \"address\": \"123 Test St Updated,Brampton Ontario\",\n            \"contactNumber\": 444555666,\n            \"books\": []\n        },\n        \"availabilityStatus\": \"Available\",\n        \"borrower\": null,\n        \"publishedYear\": 200\n    },\n    {\n        \"id\": 2,\n        \"title\": \"My Second Book Updated\",\n        \"description\": \"second test book\",\n        \"genre\": {\n            \"id\": 2,\n            \"genreName\": \"Fiction Newly Updated\",\n            \"books\": []\n        },\n        \"authors\": [],\n        \"libraryBranch\": {\n            \"id\": 1,\n            \"branchName\": \"Brampton\",\n            \"address\": \"123 Test St Updated,Brampton Ontario\",\n            \"contactNumber\": 444555666,\n            \"books\": []\n        },\n        \"availabilityStatus\": \"Available\",\n        \"borrower\": null,\n        \"publishedYear\": 200\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get book by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/books/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get book by id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/books/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 26 Oct 2023 03:00:16 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"title\": \"My Second Book Updated\",\n    \"description\": \"second test book\",\n    \"genre\": {\n        \"id\": 2,\n        \"genreName\": \"Fiction Newly Updated\",\n        \"books\": []\n    },\n    \"authors\": [],\n    \"libraryBranch\": {\n        \"id\": 1,\n        \"branchName\": \"Brampton\",\n        \"address\": \"123 Test St Updated,Brampton Ontario\",\n        \"contactNumber\": 444555666,\n        \"books\": []\n    },\n    \"availabilityStatus\": \"Available\",\n    \"borrower\": null,\n    \"publishedYear\": 200\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete book",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/books/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete book",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/books/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 26 Oct 2023 03:01:07 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Book Details deleted successfully"
+				}
+			]
+		},
+		{
+			"name": "get book by genre id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/books/genre/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books",
+						"genre",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get book by genre id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/books/genre/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books",
+								"genre",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 26 Oct 2023 03:04:35 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"title\": \"My First Book\",\n        \"description\": \"first test book\",\n        \"genre\": {\n            \"id\": 2,\n            \"genreName\": \"Fiction Newly Updated\",\n            \"books\": []\n        },\n        \"authors\": [],\n        \"libraryBranch\": {\n            \"id\": 1,\n            \"branchName\": \"Brampton\",\n            \"address\": \"123 Test St Updated,Brampton Ontario\",\n            \"contactNumber\": 444555666,\n            \"books\": []\n        },\n        \"availabilityStatus\": \"Available\",\n        \"borrower\": null,\n        \"publishedYear\": 200\n    },\n    {\n        \"id\": 3,\n        \"title\": \"My Second Book\",\n        \"description\": \"second test book\",\n        \"genre\": {\n            \"id\": 2,\n            \"genreName\": \"Fiction Newly Updated\",\n            \"books\": []\n        },\n        \"authors\": [],\n        \"libraryBranch\": {\n            \"id\": 1,\n            \"branchName\": \"Brampton\",\n            \"address\": \"123 Test St Updated,Brampton Ontario\",\n            \"contactNumber\": 444555666,\n            \"books\": []\n        },\n        \"availabilityStatus\": \"Available\",\n        \"borrower\": null,\n        \"publishedYear\": 2005\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get books by library branch id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/books/library-branch/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books",
+						"library-branch",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get books by library branch id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/books/library-branch/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books",
+								"library-branch",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 26 Oct 2023 03:06:04 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"title\": \"My First Book\",\n        \"description\": \"first test book\",\n        \"genre\": {\n            \"id\": 2,\n            \"genreName\": \"Fiction Newly Updated\",\n            \"books\": []\n        },\n        \"authors\": [],\n        \"libraryBranch\": {\n            \"id\": 1,\n            \"branchName\": \"Brampton\",\n            \"address\": \"123 Test St Updated,Brampton Ontario\",\n            \"contactNumber\": 444555666,\n            \"books\": []\n        },\n        \"availabilityStatus\": \"Available\",\n        \"borrower\": null,\n        \"publishedYear\": 200\n    },\n    {\n        \"id\": 3,\n        \"title\": \"My Second Book\",\n        \"description\": \"second test book\",\n        \"genre\": {\n            \"id\": 2,\n            \"genreName\": \"Fiction Newly Updated\",\n            \"books\": []\n        },\n        \"authors\": [],\n        \"libraryBranch\": {\n            \"id\": 1,\n            \"branchName\": \"Brampton\",\n            \"address\": \"123 Test St Updated,Brampton Ontario\",\n            \"contactNumber\": 444555666,\n            \"books\": []\n        },\n        \"availabilityStatus\": \"Available\",\n        \"borrower\": null,\n        \"publishedYear\": 2005\n    }\n]"
+				}
+			]
+		}
+	]
+}

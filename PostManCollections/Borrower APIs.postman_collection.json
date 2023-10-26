@@ -1,0 +1,434 @@
+{
+	"info": {
+		"_postman_id": "9eaca1b0-4bdc-448c-ab66-03e6dcef6a38",
+		"name": "Borrower APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3140938",
+		"_collection_link": "https://www.postman.com/chrismj/workspace/pre-assessment-project/collection/3140938-9eaca1b0-4bdc-448c-ab66-03e6dcef6a38?action=share&source=collection_link&creator=3140938"
+	},
+	"item": [
+		{
+			"name": "Add borrower",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 0,\r\n  \"firstName\": \"Test\",\r\n  \"lastName\": \"User2\",\r\n  \"activeSince\": \"2023-10-20\",\r\n  \"dateOfBirth\": \"1994-10-20\",\r\n  \"address\": \"Test address 1\",\r\n  \"borrowedBookOn\": \"2023-10-23\",\r\n  \"lateFeeAmount\": 0,\r\n  \"membershipStatus\": \"Active\",\r\n  \"contactNumber\": 0\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/borrowers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"borrowers"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add borrower",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 0,\r\n  \"firstName\": \"Test\",\r\n  \"lastName\": \"User2\",\r\n  \"activeSince\": \"2023-10-20\",\r\n  \"dateOfBirth\": \"1994-10-20\",\r\n  \"address\": \"Test address 1\",\r\n  \"borrowedBookOn\": \"2023-10-23\",\r\n  \"lateFeeAmount\": 0,\r\n  \"membershipStatus\": \"Active\",\r\n  \"contactNumber\": 0\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/borrowers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"borrowers"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "35"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 26 Oct 2023 03:15:25 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Borrower Details added successfully"
+				}
+			]
+		},
+		{
+			"name": "Get all borrowers",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": ""
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/borrowers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"borrowers"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get all borrowers",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": ""
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/borrowers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"borrowers"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 26 Oct 2023 03:16:15 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"firstName\": \"Test\",\n        \"lastName\": \"User1\",\n        \"activeSince\": \"2023-10-26T00:00:00.000+00:00\",\n        \"dateOfBirth\": \"1993-10-26T00:00:00.000+00:00\",\n        \"address\": \"Test address 1\",\n        \"borrowedBookOn\": \"2023-10-26T00:00:00.000+00:00\",\n        \"lateFeeAmount\": 0,\n        \"membershipStatus\": \"Active\",\n        \"contactNumber\": 0,\n        \"books\": []\n    },\n    {\n        \"id\": 2,\n        \"firstName\": \"Test\",\n        \"lastName\": \"User2\",\n        \"activeSince\": \"2023-10-20T00:00:00.000+00:00\",\n        \"dateOfBirth\": \"1994-10-20T00:00:00.000+00:00\",\n        \"address\": \"Test address 1\",\n        \"borrowedBookOn\": \"2023-10-23T00:00:00.000+00:00\",\n        \"lateFeeAmount\": 0,\n        \"membershipStatus\": \"Active\",\n        \"contactNumber\": 0,\n        \"books\": []\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Update borrower",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 1,\r\n        \"firstName\": \"Test\",\r\n        \"lastName\": \"User1Updated\",\r\n        \"activeSince\": \"2023-10-26\",\r\n        \"dateOfBirth\": \"1993-10-26\",\r\n        \"address\": \"Test address 1\",\r\n        \"borrowedBookOn\": \"2023-10-26\",\r\n        \"lateFeeAmount\": 0,\r\n        \"membershipStatus\": \"Active\",\r\n        \"contactNumber\": 0,\r\n        \"books\": []\r\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/borrowers/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"borrowers",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update borrower",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 1,\r\n        \"firstName\": \"Test\",\r\n        \"lastName\": \"User1Updated\",\r\n        \"activeSince\": \"2023-10-26\",\r\n        \"dateOfBirth\": \"1993-10-26\",\r\n        \"address\": \"Test address 1\",\r\n        \"borrowedBookOn\": \"2023-10-26\",\r\n        \"lateFeeAmount\": 0,\r\n        \"membershipStatus\": \"Active\",\r\n        \"contactNumber\": 0,\r\n        \"books\": []\r\n    }"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/borrowers/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"borrowers",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "37"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 26 Oct 2023 03:17:43 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Borrower Details updated successfully"
+				}
+			]
+		},
+		{
+			"name": "Get borrower by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/borrowers/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"borrowers",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get borrower by id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/borrowers/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"borrowers",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 26 Oct 2023 03:18:43 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"firstName\": \"Test\",\n    \"lastName\": \"User1Updated\",\n    \"activeSince\": \"2023-10-26T00:00:00.000+00:00\",\n    \"dateOfBirth\": \"1993-10-26T00:00:00.000+00:00\",\n    \"address\": \"Test address 1\",\n    \"borrowedBookOn\": \"2023-10-26T00:00:00.000+00:00\",\n    \"lateFeeAmount\": 0,\n    \"membershipStatus\": \"Active\",\n    \"contactNumber\": 0,\n    \"books\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete a borrower",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/borrowers/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"borrowers",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete a borrower",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/borrowers/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"borrowers",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "37"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 26 Oct 2023 03:19:28 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Borrower Details deleted successfully"
+				}
+			]
+		}
+	]
+}
